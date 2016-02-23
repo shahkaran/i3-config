@@ -35,6 +35,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 #currently we will use synapse to launch programs
+
 bindsym $mod+d exec synapse
 
 
@@ -123,8 +124,15 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# found new option to shutdown/restart/logout
+# from gist https://gist.github.com/jonyamo/5675359
+
+bindsym $mod+Shift+e exec ~/.i3/scripts/i3-exit
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -206,6 +214,9 @@ for_window [instance="file_progress"] floating enable
 for_window [instance="audacious"] floating enable
 
 for_window [title="synapse"] floating enable; border none
+
+#make i3-exit floating
+for_window [class="I3-exit" instance="i3-exit"] floating enable
 
 bindsym $mod+Shift+m exec audacious
 
