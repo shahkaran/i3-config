@@ -132,6 +132,7 @@ bindsym $mod+Shift+r restart
 # from gist https://gist.github.com/jonyamo/5675359
 
 bindsym $mod+Shift+e exec ~/.i3/scripts/i3-exit
+bindsym XF86PowerOff exec ~/.i3/scripts/i3-exit
 
 
 # resize window (you can also use the mouse for that)
