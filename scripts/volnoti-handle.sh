@@ -13,7 +13,7 @@ case "$1" in
           $SETVOL +$STEP%
           ;;
   "down")
-          $SETVOL -- -$STEP%
+          $SETVOL -$STEP%
           ;;
   "mute")
           $SETMUTE

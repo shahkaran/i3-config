@@ -121,7 +121,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+$alt+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -207,7 +207,8 @@ bindsym $mod+button3 floating toggle
 bindsym Print exec "scrot '%Y-%m-%d_%s.png'  -e  'mv  $f ~/Pictures/Screenshoots'"
 bindsym $alt+Print exec "scrot -s '%Y-%m-%d_%s.png'  -e  'mv  $f ~/Pictures/Screenshoots'"
 
-bindsym $mod+P exec "xrandr --output HDMI1 --auto --right-of eDP1"
+bindsym $mod+P exec "sh ~/.i3/scripts/monitor.sh"
+bindsym $mod+shift+c exec gnome-calculator
 
 for_window [class="Skype"] floating enable
 for_window [class="Keepassx"] floating enable
@@ -220,9 +221,13 @@ for_window [title="synapse"] floating enable; border none
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 
 bindsym $mod+Shift+m exec audacious
+bindsym $alt+l exec "i3lock -bf -p win -i /home/karan/Downloads/lockscreen/1.png"
 
 exec --no-startup-id volnoti
 exec skype
-exec keepassx
-exec "xrandr --output HDMI1 --auto --right-of eDP1"
-exec "eval $(cat ~/.fehbg)"
+#exec keepassx
+exec "sh ~/.i3/scripts/monitor.sh"
+#exec "xrandr --output HDMI-1 --auto --left-of eDP-1"
+#exec "eval $(cat ~/.fehbg)"
+
+font pango:FontAwesome 12
