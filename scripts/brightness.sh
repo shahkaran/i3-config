@@ -20,11 +20,17 @@ case "$1" in
     "up")
         NEW_BRIGHTNESS=`expr $CURRENT_BRIGHTNESS + $STEP`
         echo $NEW_BRIGHTNESS
-        $(echo $NEW_BRIGHTNESS  > $BRIGHTNESS_LOCATION)
+        if [ $NEW_BRIGHTNESS -le $MAXIMUM ]
+        then
+            $(echo $NEW_BRIGHTNESS  > $BRIGHTNESS_LOCATION)
+        fi
         ;;
     "down")
         NEW_BRIGHTNESS=`expr $CURRENT_BRIGHTNESS - $STEP`
         echo $NEW_BRIGHTNESS
-        $(echo $NEW_BRIGHTNESS  > $BRIGHTNESS_LOCATION)
+        if [ "$NEW_BRIGHTNESS" -ge "10" ]
+        then
+            $(echo $NEW_BRIGHTNESS  > $BRIGHTNESS_LOCATION)
+        fi
         ;;
 esac
