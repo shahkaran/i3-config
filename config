@@ -188,8 +188,14 @@ bindsym XF86AudioMute exec "sh /home/karan/.i3/scripts/volnoti-handle.sh mute"
 
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec "sh /home/karan/.i3/scripts/brightness.sh up"
+bindsym XF86MonBrightnessDown exec "sh /home/karan/.i3/scripts/brightness.sh down" 
+
+
+#screen brightness using Alt
+bindsym $alt+Right exec "sh /home/karan/.i3/scripts/brightness.sh up"
+bindsym $alt+Left exec "sh /home/karan/.i3/scripts/brightness.sh down" 
+
 #
 # # Touchpad controls
 #bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
