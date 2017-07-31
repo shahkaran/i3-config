@@ -1,7 +1,0 @@
-#this file will be filled with actual script later 
-
-#we will update and get brightness using 
-
-/sys/class/backlight/intel_backlight/brightness
-
-files and added a chmod go+w /sys/class/backlight/intel_backlight/brightness in /etc/rc.local
